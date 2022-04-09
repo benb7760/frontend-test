@@ -1,0 +1,17 @@
+.popover-left {
+    transform: translateY(-50%) translateX(-16px);
+}
+
+.popover-right {
+    transform: translateY(-50%) translateX(16px);
+}
+
+.popover-arrow-left {
+    top: calc(50% - 8px);
+    left: calc(100% - 12px);
+}
+
+.popover-arrow-right {
+    top: calc(50% - 8px);
+    left: -4px;
+}
