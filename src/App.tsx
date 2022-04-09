@@ -25,6 +25,18 @@ function App() {
       <Popover trigger="click" placement="right" title="Right side" content={popoverContent}>
         <Button>Click to open right</Button>
       </Popover>
+
+      <br />
+
+      <Popover trigger="hover" placement="left" title="Left side" content={popoverContent}>
+        <Button>Hover to open left</Button>
+      </Popover>
+
+      <br />
+
+      <Popover trigger="hover" placement="right" title="Right side" content={popoverContent}>
+        <Button>Hover to open right</Button>
+      </Popover>
     </div>
   )
 }

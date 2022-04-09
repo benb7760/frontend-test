@@ -118,13 +118,17 @@ export function Popover(props: PopoverProps) {
     if (props.trigger === 'click') {
         triggerProps.onClick = () => show();
     }
+    else if (props.trigger === 'hover') {
+        triggerProps.onMouseEnter = () => show();
+        triggerProps.onMouseLeave = () => hide();
+    }
 
     const trigger = React.cloneElement(triggerElement, triggerProps);
 
     return (<>
         {trigger}
         {isShowing && <>
-            <PopoverBackground key="background" onClick={() => hide()} />
+            {props.trigger === 'click' && <PopoverBackground key="background" onClick={() => hide()} />}
             <PopoverContainer key="content" className={`popover-${props.placement}`} style={positionStyle}>
                 <PopoverArrow className={`popover-arrow-${props.placement}`} />
                 <PopoverInner>
