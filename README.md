@@ -24,4 +24,14 @@ Here you should have everything you need to complete the test
    6. It does not require to have animations
    7. You must use styled components
    8. Any components you need you must build
-   
+
+## Completion notes
+
+Limitations and solutions:
+* As per requirements, we only support left and right, without animations
+* The buttons aren't nicely styled as they werent in scope.
+* The current implementation does not adapt when the popover content would appear off the screen (ie if the trigger is close to screen bounds)
+   * I would solve this by detecting the popover position and width at run time, and switching the placement to the opposite side. This appears to be roughly how antd does it.
+* The current implementation does not adapt to screen sizes, without first closing the popover and reopening.
+   * I would solve this by using a resize observer, most likely, applied to the trigger element. Then, when the trigger element repositions, the popover positions would be updated accordingly.
+* The usage of styled isn't overly complex. Could be greatly improved with theming, etc.
